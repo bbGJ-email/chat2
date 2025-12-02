@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易聊天室</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>简易聊天室</h1>
+            <div class="user-info">
+                <span id="current-user"></span>
+                <button id="change-name-btn">更改昵称</button>
+            </div>
+        </div>
+        
+        <div id="name-modal" class="modal">
+            <div class="modal-content">
+                <h2>请输入您的昵称</h2>
+                <input type="text" id="nickname-input" placeholder="输入昵称..." maxlength="20">
+                <button id="confirm-name-btn">确定</button>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <div class="system-message">欢迎来到聊天室！请先设置您的昵称。</div>
+        </div>
+        
+        <div class="chat-input-area">
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="输入消息..." maxlength="500" disabled>
+                <button type="submit" id="send-btn" disabled>发送</button>
+            </form>
+        </div>
+        
+        <div class="online-users">
+            <h3>在线用户</h3>
+            <ul id="user-list">
+                <!-- 在线用户列表将通过JavaScript动态更新 -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- 引入Supabase客户端库 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- 纯前端实现，无需WebSocket -->
+    <script src="js/app.js"></script>
+</body>
+</html>
